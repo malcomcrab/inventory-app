@@ -12,6 +12,10 @@
 Requirements for the software and other tools to build, test and push 
     NodeJS 
     Express
+    PostgreSQL through node-postgres (pg)
+    Express Validator
+    EJS 
+    
     TBC
 
 ### Installing
