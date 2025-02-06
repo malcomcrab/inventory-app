@@ -7,5 +7,5 @@ module.exports = new Pool({
   user: process.env.USERNAME,
   database: process.env.DATABASE,
   password: process.env.PP,
-  port: process.env.PORT // The default port
+  port: 5432 // The default port
 });
