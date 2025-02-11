@@ -1,4 +1,5 @@
 const db = require("../db/queries");
+
 const links = [
   { href: "/", text: "Home" },
   { href: "new", text: "Add a Character" },
