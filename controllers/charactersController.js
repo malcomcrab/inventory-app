@@ -22,8 +22,16 @@ function renderAddForm(req, res) {
   })
 }
 
+async function deleteById(req, res){
+  const characterId = req.params.id
+  console.log('id:' +characterId)
+  await db.deleteCharacterById(characterId)
+  res.redirect("/")
+}
+
 module.exports = {
   getCharacters,
   renderAddForm,
-  createNewCharacter
+  createNewCharacter,
+  deleteById,
 };
