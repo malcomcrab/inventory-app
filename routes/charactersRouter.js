@@ -4,5 +4,7 @@ const charactersController = require("../controllers/charactersController");
 const charactersRouter = Router();
 
 charactersRouter.get("/", charactersController.getCharacters);
+charactersRouter.get("/new", charactersController.renderAddForm)
+charactersRouter.post("/create", charactersController.createNewCharacter)
 
 module.exports = charactersRouter;
