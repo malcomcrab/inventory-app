@@ -10,6 +10,8 @@
     <body>
       <a href="/">Home</a>
       <h1><%= title %></h1>
+
+      <%- include('navbar', {links: links}) %>
       <form action="/create" method="POST">
         <label for="first_name">Full Name: </label>
         <input placeholder="Easy" type="text" name="first_name" id="first_name">

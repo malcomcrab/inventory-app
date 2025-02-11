@@ -9,7 +9,7 @@ charactersRouter.post("/create", charactersController.createNewCharacter)
 charactersRouter.post("/:id/delete", charactersController.deleteById)
 charactersRouter.get("/hometowns", charactersController.getAllHometownNames)
 charactersRouter.get("/:hometown/bytown", charactersController.getFromHometown)
-
-
+charactersRouter.get("/:id/update-form", charactersController.renderCharacterUpdateForm)
+charactersRouter.post("/:id/update-character", charactersController.updateCharacterinfo)
 
 module.exports = charactersRouter;

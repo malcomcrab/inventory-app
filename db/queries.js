@@ -5,6 +5,15 @@ async function getAllCharacters() {
     return rows;
   }
 
+async function getCharacterById(characterId) {
+  const { rows } = await pool.query("SELECT * FROM characters WHERE id=($1)", [characterId])
+  return rows
+}
+
+async function updateCharacterDetails(characterId, first_name, last_name, hometown, faction, first_appearence){
+  await pool.query("UPDATE characters SET first_name= ($2), last_name= ($3), hometown=($4), faction=($5), first_appearence=($6) WHERE id=($1)", [characterId, first_name, last_name, hometown, faction, first_appearence])
+}
+
 async function getAllHometowns() {
   const { rows } = await pool.query("SELECT DISTINCT hometown FROM characters")
   return rows;
@@ -26,7 +35,9 @@ async function deleteCharacterById(characterId) {
 
 module.exports = {
     getAllCharacters, 
+    getCharacterById,
     createCharacter,
+    updateCharacterDetails,
     deleteCharacterById,
     getAllHometowns,
     getAllFromHometown,

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title><%= title %>></title>
+</head>
+
+<body>
+    <h1><%= title %></h1>
+    <%- include('navbar', {links: links}) %>
+      <form action="/<%= character[0].id %>/update-character" method="POST">
+        <label for="first_name">Full Name: </label>
+        <input value=<%= character[0].first_name %> type="text" name="first_name" id="first_name">
+        <label for="last_name">Last Name: </label>
+        <input value=<%= character[0].last_name %>  type="text" name="last_name" id="last_name">
+        <label for="hometown">Hometown: </label>
+        <input value=<%= character[0].hometown %>  type="text" name="hometown" id="hometown">
+        <label for="faction">Faction: </label>
+        <input value=<%= character[0].faction %>  type="text" name="faction" id="faction">
+        <label for="first_appearence">First Appearence: </label>
+        <input value=<%= character[0].first_appearence %>  type="text" name="first_appearence" id="first_appearence">
+        <button type="submit">Submit</button>
+      </form>
+
+    </ul>
+</body>
+
+
+</html>
+
+

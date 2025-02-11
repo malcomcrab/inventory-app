@@ -1,5 +1,20 @@
-
+<!-- 
 <div>
     <a href="/">Home</a>
-    <a href="">Add Character</a>
-</div>
+    <a href="new">Add Character</a>
+    <a href="hometowns">All Hometowns</a>
+</div> -->
+
+<!-- navbar.ejs -->
+<nav>
+    <ul>
+      <% for (let i = 0; i < links.length; i++) { %>
+        <li>
+          <a href="<%= links[i].href %>">
+            <span> <%= links[i].text %> </span>
+          </a>
+        </li>
+      <% } %>
+    </ul>
+  </nav>
+  

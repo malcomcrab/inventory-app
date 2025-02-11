@@ -5,10 +5,16 @@ const path = require("node:path");
 const { body, validationResult } = require("express-validator");
 const charactersRouter = require("./routes/charactersRouter");
 
+const links = [
+  { href: "/", text: "Home" },
+  { href: "hometowns", text: "Home Towns" },
+];
+
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use("/", charactersRouter);
- 
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
