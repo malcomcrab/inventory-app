@@ -10,9 +10,9 @@ async function getCharacters(req, res) {
 }
 
 async function createNewCharacter(req,res) {
-  const {first_name, last_name} = req.body
+  const {first_name, last_name, hometown, faction, first_appearence} = req.body
   console.log(req.body)
-  await db.createCharacter(first_name, last_name)
+  await db.createCharacter(first_name, last_name, hometown, faction, first_appearence)
   res.redirect("/")
 }
 

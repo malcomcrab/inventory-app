@@ -5,8 +5,8 @@ async function getAllCharacters() {
     return rows;
   }
 
-async function createCharacter(first_name, last_name) {
-  await pool.query("INSERT INTO characters (first_name, last_name) VALUES (($1), ($2))", [first_name, last_name])
+async function createCharacter(first_name, last_name, hometown, faction, first_appearence) {
+  await pool.query("INSERT INTO characters (first_name, last_name, hometown, faction, first_appearence) VALUES (($1), ($2), ($3), ($4), ($5))", [first_name, last_name, hometown, faction, first_appearence])
 }
 
 async function deleteCharacterById(characterId) {
