@@ -9,6 +9,26 @@ async function getCharacters(req, res) {
   })
 }
 
+async function getFromHometown(req, res) {
+  const hometown = req.params.hometown
+  const hometownCapitalised = hometown[0].toUpperCase() + hometown.slice(1)
+  const characters = await db.getAllFromHometown(hometownCapitalised);
+  res.render("index", {
+    title: hometownCapitalised,
+    characters: characters
+  })
+}
+
+async function getAllHometownNames(req, res) {
+  const hometowns = await db.getAllHometowns();
+  console.log(hometowns)
+  res.render("columnDataList", {
+    title: "Hometowns",
+    hometowns: hometowns
+  })
+}
+
+
 async function createNewCharacter(req,res) {
   const {first_name, last_name, hometown, faction, first_appearence} = req.body
   console.log(req.body)
@@ -34,4 +54,6 @@ module.exports = {
   renderAddForm,
   createNewCharacter,
   deleteById,
+  getAllHometownNames,
+  getFromHometown
 };
